@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { Link } from "react-router-dom";
+import { format } from 'date-fns';
 import * as S from './styles';
 
 import api from '../../services/api';
@@ -12,7 +12,7 @@ import iconCalendar from '../../assets/calendar.png'
 import iconClock from '../../assets/clock.png'
 
 
-function Task() {
+function Task({ match }) {
 
     const [lateCount, setLateCount] =   useState('');
     const [type, setType] =             useState('');
@@ -31,6 +31,17 @@ function Task() {
                   setLateCount(response.data.length);
                 })
     };
+
+    async function loadTaskDetails() { 
+      api.get(`/task/${match.params.id}`)
+              .then(response => {
+                 setType(response.data.type)
+                 setTitle(response.data.title)
+                 setDescription(response.data.description)
+                 setDate('')
+                 setHour('')
+              });
+    }
 
     async function createTask() {
       if(date === '' || hour === ''){
@@ -67,6 +78,7 @@ function Task() {
     useEffect(() => {
 
       lateVerify();
+      loadTaskDetails();
     }, []);
 
     return (

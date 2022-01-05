@@ -10,6 +10,7 @@ export default function Routers() {
             <Routes>
                 <Route exact path='/' element={<Home/>} />
                 <Route exact path='/task' element={<Task/>}/>
+                <Route exact path='/task/:id' element={<Task/>}/>
             </Routes>
         </BrowserRouter>
     )

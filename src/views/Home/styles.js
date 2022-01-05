@@ -26,6 +26,16 @@ export const Content = styled.div`
     flex-wrap: wrap;
     flex-direction: row;
     margin-bottom: 60px;
+
+    a {
+        padding: 5px;
+        text-decoration: none;
+        color: ${mainBlue};
+    }
+     
+    p {
+        padding: 15px 5px;
+    }
 `;
 
 export const Title = styled.div`
