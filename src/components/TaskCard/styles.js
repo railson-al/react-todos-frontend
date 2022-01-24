@@ -16,6 +16,7 @@ export const Container = styled.div`
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
+    opacity: ${props => props.done ? 0.5 : 1};
 
     -webkit-box-shadow: 10px 10px 8px -14px rgba(0,0,0,1);
     -moz-box-shadow: 10px 10px 8px -14px rgba(0,0,0,1);

@@ -26,6 +26,11 @@ export const Content = styled.div`
     flex-wrap: wrap;
     flex-direction: row;
     margin-bottom: 60px;
+
+    a {
+        text-decoration: none;
+        color: ${mainBlue};
+    }
 `;
 
 export const Title = styled.div`

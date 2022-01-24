@@ -1,20 +1,15 @@
 import React from "react";
 
-import * as S from './styles';
-import filter_img from '../../assets/filter.png';
-
-
+import * as S from "./styles";
+import filter_img from "../../assets/filter.png";
 
 function FilterCard({ title, actived }) {
-    return (
+  return (
+    <S.Container actived={actived}>
+      <img src={filter_img} alt="Filter" />
+      <span>{title}</span>
+    </S.Container>
+  );
+}
 
-      <S.Container actived={actived}>
-        <img src={filter_img} alt="Filter" />
-        <span>{title}</span>
-      </S.Container>
-
-    );
-  }
-  
-  export default FilterCard;
-  
+export default FilterCard;
